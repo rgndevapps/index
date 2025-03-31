@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latia Story</title>
+  <style>
+    @font-face {
+      font-family: 'RasterForge';
+      src: url('fonts/Retro Gaming.ttf') format('truetype');
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: #1e1e1e;
+      color: #fff;
+    }
+    header {
+      background: linear-gradient(180deg, rgba(59,59,152,0.8), rgba(25,42,86,0));
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      font-family: 'RasterForge', sans-serif;
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+    .header-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .cta-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    header .cta-button {
+      background-color: #ff4757;
+      color: #fff;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-size: 1.1em;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+      z-index: 2;
+    }
+    header .cta-button:hover {
+      background-color: #e84118;
+    }
+    .social-links-top {
+      display: flex;
+      gap: 15px;
+      z-index: 2;
+    }
+    .social-links-top a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1em;
+      transition: color 0.3s ease;
+    }
+    .social-links-top a:hover {
+      color: #ff4757;
+    }
+    .language-selector {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #fff;
+      color: #000;
+      border: none;
+      padding: 5px;
+      border-radius: 5px;
+      font-size: 0.9em;
+      cursor: pointer;
+      z-index: 3;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    section h2 {
+      font-family: 'RasterForge', sans-serif;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .screenshots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .screenshots img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+    .screenshots img:hover {
+      transform: scale(1.05);
+    }
+    .newsletter {
+      background: #2f3640;
+      padding: 40px 20px;
+      max-width: 600px;
+      margin: 40px auto;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .newsletter form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 20px;
+      width: 100%;
+    }
+    .newsletter input[type="email"] {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    .newsletter button {
+      background-color: #ff4757;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .newsletter button:hover {
+      background-color: #e84118;
+    }
+    footer {
+      background: #2f3640;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+    .social-links {
+      margin-top: 15px;
+    }
+    .social-links a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 1.1em;
+      transition: color 0.3s ease;
+    }
+    .social-links a:hover {
+      color: #ff4757;
+    }
+
+    @media (max-width: 768px) {
+      header {
+          padding-top: 40px;
+          padding-bottom: 30px;
+      }
+      header h1 {
+        font-size: 2.5em;
+      }
+      header p {
+        font-size: 1em;
+      }
+      .cta-container, .social-links-top {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <select id="language-selector" class="language-selector">
+    <option value="en">English</option>
+    <option value="it">Italiano</option>
+    <option value="fr">Français</option>
+    <option value="es">Español</option>
+    <option value="de">Deutsch</option>
+    <option value="zh">Chinese</option>
+    <option value="jp">日本語</option>
+  </select>
+
+  <header>
+    <div class="header-container">
+      <h1 data-key="pageTitle">Latia Story</h1>
+      <p data-key="tagline">Enter an epic world, full of adventures and mysteries. Get ready to experience a unique journey!</p>
+      <div class="cta-container">
+        <a href="#download" class="cta-button" data-key="downloadBtn">Download Now</a>
+        <div class="social-links-top">
+          <a href="https://discord.com" target="_blank">Discord</a>
+          <a href="https://instagram.com" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="screenshots">
+    <h2 data-key="screenshotsTitle">Game Screenshots</h2>
+    <div class="screenshots">
+      <img src="images/screenshot1.png" alt="Screenshot 1">
+      <img src="images/screenshot2.png" alt="Screenshot 2">
+      <img src="images/screenshot3.png" alt="Screenshot 3">
+      <img src="images/screenshot4.png" alt="Screenshot 4">
+      <img src="images/screenshot5.png" alt="Screenshot 5">
+      <img src="images/screenshot6.png" alt="Screenshot 6">
+    </div>
+  </section>
+
+  <section id="download">
+    <h2 data-key="downloadSectionTitle">Download</h2>
+    <p data-key="downloadSectionText" style="text-align: center;">Download the game and start your epic journey right away!</p>
+    <div style="text-align: center; margin-top: 20px;">
+      <a href="#" class="cta-button" data-key="googlePlayBtn">Download from Google Play</a>
+    </div>
+  </section>
+
+  <section id="newsletter" class="newsletter">
+    <h2 data-key="newsletterTitle">Subscribe to our Newsletter</h2>
+    <p data-key="newsletterText">Stay updated with our latest news and updates.</p>
+    <form id="newsletter-form">
+      <input type="email" placeholder="Enter your email address" data-key="newsletterPlaceholder" required>
+      <button type="submit" data-key="newsletterBtn">Subscribe</button>
+    </form>
+  </section>
+
+  <footer>
+    <p data-key="footerText">© 2025 Latia Story. All rights reserved. Made by rgndev.</p>
+    <div class="social-links">
+      <a href="https://discord.com" target="_blank">Discord</a>
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: {
+        pageTitle: "Latia Story",
+        tagline: "Enter an epic world, full of adventures and mysteries. Get ready to experience a unique journey!",
+        downloadBtn: "Download Now",
+        screenshotsTitle: "Game Screenshots",
+        downloadSectionTitle: "Download",
+        downloadSectionText: "Download the game and start your epic journey right away!",
+        googlePlayBtn: "Download from Google Play",
+        footerText: "© 2025 Latia Story. All rights reserved. Made by rgndev.",
+        newsletterTitle: "Subscribe to our Newsletter",
+        newsletterText: "Stay updated with our latest news and updates.",
+        newsletterPlaceholder: "Enter your email address",
+        newsletterBtn: "Subscribe"
+      },
+      it: {
+        pageTitle: "Latia Story",
+        tagline: "Entra in un mondo epico, pieno di avventure e misteri. Preparati a vivere un'esperienza unica!",
+        downloadBtn: "Scarica Ora",
+        screenshotsTitle: "Screenshot del Gioco",
+        downloadSectionTitle: "Download",
+        downloadSectionText: "Scarica il gioco e inizia subito la tua avventura epica!",
+        googlePlayBtn: "Download da Google Play",
+        footerText: "© 2025 Latia Story. Tutti i diritti riservati. Realizzato da rgndev.",
+        newsletterTitle: "Iscriviti alla nostra newsletter",
+        newsletterText: "Rimani aggiornato con le nostre ultime notizie e aggiornamenti.",
+        newsletterPlaceholder: "Inserisci il tuo indirizzo email",
+        newsletterBtn: "Iscriviti"
+      },
+      fr: {
+        pageTitle: "Latia Story",
+        tagline: "Entrez dans un monde épique, rempli d'aventures et de mystères. Préparez-vous à vivre un voyage unique!",
+        downloadBtn: "Télécharger maintenant",
+        screenshotsTitle: "Captures d'écran du jeu",
+        downloadSectionTitle: "Téléchargement",
+        downloadSectionText: "Téléchargez le jeu et commencez immédiatement votre voyage épique!",
+        googlePlayBtn: "Télécharger depuis Google Play",
+        footerText: "© 2025 Latia Story. Tous droits réservés. Créé par rgndev.",
+        newsletterTitle: "Abonnez-vous à notre Newsletter",
+        newsletterText: "Restez informé de nos dernières nouvelles et mises à jour.",
+        newsletterPlaceholder: "Entrez votre adresse email",
+        newsletterBtn: "S'abonner"
+      },
+      es: {
+        pageTitle: "Latia Story",
+        tagline: "Entra en un mundo épico, lleno de aventuras y misterios. ¡Prepárate para vivir un viaje único!",
+        downloadBtn: "Descargar ahora",
+        screenshotsTitle: "Capturas de pantalla del juego",
+        downloadSectionTitle: "Descargar",
+        downloadSectionText: "Descarga el juego y comienza tu viaje épico de inmediato!",
+        googlePlayBtn: "Descargar desde Google Play",
+        footerText: "© 2025 Latia Story. Todos los derechos reservados. Hecho por rgndev.",
+        newsletterTitle: "Suscríbete a nuestro boletín",
+        newsletterText: "Mantente al día con nuestras últimas noticias y actualizaciones.",
+        newsletterPlaceholder: "Introduce tu correo electrónico",
+        newsletterBtn: "Suscribirse"
+      },
+      de: {
+        pageTitle: "Latia Story",
+        tagline: "Betrete eine epische Welt, voller Abenteuer und Geheimnisse. Mach dich bereit für ein einzigartiges Erlebnis!",
+        downloadBtn: "Jetzt herunterladen",
+        screenshotsTitle: "Spiel Screenshots",
+        downloadSectionTitle: "Herunterladen",
+        downloadSectionText: "Lade das Spiel herunter und beginne gleich deine epische Reise!",
+        googlePlayBtn: "Herunterladen von Google Play",
+        footerText: "© 2025 Latia Story. Alle Rechte vorbehalten. Erstellt von rgndev.",
+        newsletterTitle: "Abonniere unseren Newsletter",
+        newsletterText: "Bleibe über unsere neuesten Nachrichten und Updates informiert.",
+        newsletterPlaceholder: "Gib deine E-Mail-Adresse ein",
+        newsletterBtn: "Abonnieren"
+      },
+      jp: {
+        pageTitle: "Latia Story",
+        tagline: "冒険と謎に満ちた壮大な世界へ足を踏み入れ、ユニークな体験を味わおう！",
+        downloadBtn: "今すぐダウンロード",
+        screenshotsTitle: "ゲームのスクリーンショット",
+        downloadSectionTitle: "ダウンロード",
+        downloadSectionText: "ゲームをダウンロードして、すぐに壮大な旅を始めよう！",
+        googlePlayBtn: "Google Playからダウンロード",
+        footerText: "© 2025 Latia Story. All rights reserved. 作成者: rgndev.",
+        newsletterTitle: "ニュースレターを購読する",
+        newsletterText: "最新のニュースとアップデートをお届けします。",
+        newsletterPlaceholder: "メールアドレスを入力してください",
+        newsletterBtn: "購読する"
+      },
+      zh: {
+        pageTitle: "Latia Story",
+        tagline: "进入充满冒险和神秘的史诗世界，准备好体验独特的旅程！",
+        downloadBtn: "立即下载",
+        screenshotsTitle: "游戏截图",
+        downloadSectionTitle: "下载",
+        downloadSectionText: "下载游戏，立即开始你的史诗之旅！",
+        googlePlayBtn: "从 Google Play 下载",
+        footerText: "© 2025 Latia Story. All rights reserved. 由 rgndev 制作.",
+        newsletterTitle: "订阅我们的通讯",
+        newsletterText: "获取最新消息和更新。",
+        newsletterPlaceholder: "输入您的电子邮箱地址",
+        newsletterBtn: "订阅"
+      }
+    };
+
+    const languageSelector = document.getElementById('language-selector');
+
+    function applyTranslations(lang) {
+        const currentLangTranslations = translations[lang] || translations['en'];
+
+        const elements = document.querySelectorAll('[data-key]');
+        elements.forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (currentLangTranslations && currentLangTranslations[key]) {
+                if (el.tagName === 'INPUT' && key === 'newsletterPlaceholder') {
+                    el.placeholder = currentLangTranslations[key];
+                } else {
+                    el.innerText = currentLangTranslations[key];
+                }
+            }
+        });
+        document.title = currentLangTranslations.pageTitle || "Latia Story";
+    }
+
+    languageSelector.addEventListener('change', function() {
+      applyTranslations(languageSelector.value);
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        applyTranslations(languageSelector.value);
+        const placeholderKey = 'newsletterPlaceholder';
+        const initialLang = languageSelector.value;
+        const initialPlaceholderText = (translations[initialLang] && translations[initialLang][placeholderKey]) || translations['en'][placeholderKey];
+        const emailInput = document.querySelector('#newsletter-form input[type="email"]');
+        if(emailInput) {
+            emailInput.placeholder = initialPlaceholderText;
+        }
+    });
+
+     const newsletterForm = document.getElementById('newsletter-form');
+     if(newsletterForm) {
+        newsletterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing!');
+            newsletterForm.reset();
+        });
+     }
+
+  </script>
+</body>
+</html>
